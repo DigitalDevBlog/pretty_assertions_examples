@@ -4,6 +4,10 @@ fn main() {
 
 #[cfg(test)]
 mod test {
+    /// Usually you just want to replace the assert_eq and assert_ne macros with this
+    /// those from pretty_assertions. If you do, just leave out the 'as passert_eq' and 'as
+    /// passsert_ne'. The below two lines redefine the pretty_assertion macros to not have 
+    /// name clashes with the standard asserts.
     use pretty_assertions::assert_eq as passert_eq;
     use pretty_assertions::assert_ne as passert_ne;
     use std::collections::HashMap;
