@@ -9,6 +9,7 @@ mod test {
 
     /// This test should fail, because we are checking whether actual and expected are the same
     /// and they are not.
+   /// Remove the #[should_panic] line to see the results.
     #[test]
     #[should_panic]
     fn show_default_assert_eq() {
@@ -26,6 +27,7 @@ mod test {
     }
 
     /// This test should fail similar to the previous test with the standard assert.
+   /// Remove the #[should_panic] line to see the results.
     #[test]
     #[should_panic]
     fn show_default_pretty_assert_eq() {
@@ -34,8 +36,9 @@ mod test {
         passert_eq!(actual, expected);
     }
 
-    /// This test should fail because we expect both inputs to be different and they are not.
-    #[test]
+   /// This test should fail because we expect both inputs to be different and they are not.
+   /// Remove the #[should_panic] line to see the results.
+   #[test]
     #[should_panic]
     fn show_default_pretty_assert_ne() {
         let s1 = "Apple";
@@ -43,6 +46,7 @@ mod test {
         passert_ne!(s1, s2);
     }
 
+    /// This test should fail. Remove the #[should_panic] line to see the results.
     #[test]
     #[should_panic]
     fn compare_multi_line_string() {
@@ -51,5 +55,13 @@ mod test {
         passert_eq!(s1,s2);
     }
 
+    /// This test should fail. Remove the #[should_panic] line to see the results.
+    #[test]
+    #[should_panic]
+    fn compare_data_structures() {
+        let v1 = vec![1,3,5,8];
+        let v2 = vec![1,4,6,8];
+        passert_eq!(v1, v2);
+    }
 }
 
